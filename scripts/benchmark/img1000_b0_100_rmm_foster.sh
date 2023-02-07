@@ -1,0 +1,11 @@
+python main_rmm.py \
+    -model rmm-foster \
+    --dataset imagenet1000 \
+    -ms 20000 \
+    -init 100 \
+    -incre 100 \
+    -net resnet18 \
+    -p benchmark \
+    -d 0 1 2 \
+    -c 0.0 0.0 0.1 0.1 0.1 0.0 0.1 0.0 0.1 0.0 \
+    -m 0.3 0.3 0.3 0.4 0.4 0.4 0.4 0.4 0.4 0.4

@@ -1,0 +1,11 @@
+python main_memo.py \
+    -model memo \
+    -init 50 \
+    -incre 25 \
+    --dataset imagenet100 \
+    -net memo_resnet18 \
+    -p benchmark \
+    -d 2 3 \
+    --scheduler cosine \
+    --t_max 170 \
+    --skip

@@ -1,0 +1,1 @@
+python main.py -model foster -init 20 -incre 20  -p benchmark --skip -d 2
