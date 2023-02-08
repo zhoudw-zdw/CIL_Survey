@@ -1,16 +1,24 @@
 # Deep Class-Incremental Learning: A Survey
 
-The code repository for "[Deep Class-Incremental Learning: A Survey]()" in PyTorch. 
+The code repository for "[Deep Class-Incremental Learning: A Survey](http://arxiv.org/abs/2302.03648)" in PyTorch. If you use any content of this repo for your work, please cite the following bib entry: 
 
-<!-- If you use any content of this repo for your work, please cite the following bib entry: -->
+	@article{zhou2023class,
+  	    author = {Zhou, Da-Wei and Wang, Qi-Wei and Qi, Zhi-Hong and Ye, Han-Jia and Zhan, De-Chuan and Liu, Ziwei},
+ 	    title = {Deep Class-Incremental Learning: A Survey},
+	    journal = {arXiv preprint arXiv:2302.03648},
+	    year = {2023}
+ 	}
+
 
 
 
 
 ## Updates
 
+[02/2023] [arXiv](https://arxiv.org/abs/2302.03648) paper has been released.
 
 [02/2023] The code has been released.
+
 
 
 ## Introduction
