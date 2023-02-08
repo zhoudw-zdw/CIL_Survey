@@ -53,10 +53,28 @@ As discussed in the main paper, we aim for a fair comparison among different met
 ## Code Structures
 
 - `checkpoints`: We supply the *same pre-trained checkpoints for most methods* for a fair comparison. Please download the checkpoint from [Google Drive](https://drive.google.com/drive/folders/1FLgnMkNuQyRLjYJ5Khnj370LtfYExZhm?usp=sharing) or [Onedrive](https://entuedu-my.sharepoint.com/:f:/g/personal/n2207876b_e_ntu_edu_sg/EhXYBtaQRbtKhFRaCJ6IgfEBykAUKDDynkfXMULBqYMnKA?e=rjz1sd) and put these checkpoints in this folder.
-- `convs`: The network structures adpoted in the implementation.
+- `convs`: The network structures adopted in the implementation.
 - `exps`: The **default** config files for compared methods. It should be noted that these config files will be overwritten by the parameters (e.g., function `setup_parser` in `main.py`) passed via the command line.
 - `scripts`: The scripts for running the code in our evaluations.
+- `models`: The implementation of different CIL methods.
+- `utils`: Useful functions for dataloader and incremental actions.
 
+## Supported Methods
+
+-  `FineTune`: Baseline method which simply updates parameters on new tasks and suffers from catastrophic forgetting. 
+-  `EWC`: Overcoming catastrophic forgetting in neural networks. PNAS2017 [[paper](https://arxiv.org/abs/1612.00796)]
+-  `LwF`:  Learning without Forgetting. ECCV2016 [[paper](https://arxiv.org/abs/1606.09282)]
+-  `Replay`: Baseline method with exemplars.
+-  `GEM`: Gradient Episodic Memory for Continual Learning. NIPS2017 [[paper](https://arxiv.org/abs/1706.08840)]
+-  `iCaRL`: Incremental Classifier and Representation Learning. CVPR2017 [[paper](https://arxiv.org/abs/1611.07725)]
+-  `BiC`: Large Scale Incremental Learning. CVPR2019 [[paper](https://arxiv.org/abs/1905.13260)]
+-  `WA`: Maintaining Discrimination and Fairness in Class Incremental Learning. CVPR2020 [[paper](https://arxiv.org/abs/1911.07053)]
+-  `PODNet`: PODNet: Pooled Outputs Distillation for Small-Tasks Incremental Learning. ECCV2020 [[paper](https://arxiv.org/abs/2004.13513)]
+-  `DER`: DER: Dynamically Expandable Representation for Class Incremental Learning. CVPR2021 [[paper](https://arxiv.org/abs/2103.16788)]
+-  `RMM`: RMM: Reinforced Memory Management for Class-Incremental Learning. NeurIPS2021 [[paper](https://proceedings.neurips.cc/paper/2021/hash/1cbcaa5abbb6b70f378a3a03d0c26386-Abstract.html)]
+-  `Coil`: Co-Transport for Class-Incremental Learning. ACM MM2021 [[paper](https://arxiv.org/abs/2107.12654)]
+-  `FOSTER`: Feature Boosting and Compression for Class-incremental Learning. ECCV 2022 [[paper](https://arxiv.org/abs/2204.04662)]
+-  `MEMO`: A Model or 603 Exemplars: Towards Memory-Efficient Class-Incremental Learning. ICLR 2023 [[paper](https://arxiv.org/abs/2205.13218)]
 
 
 # Towards a Fair Comparison of Class-Incremental Learning
@@ -71,11 +89,13 @@ In the main paper, we conduct three types of empirical evaluations to find out t
 
 <img src="resources/imagenet1000.png">
 
-- **Memory-aligned comparison**: compares the performance of different methods with the same memory budget to DER.
+- **Memory-aligned comparison**: compares the performance of different methods with the same memory budget to DER. For those methods that consume less budget than DER, we align the cost by saving extra exemplars. For example, a ResNet32 model costs 463,504 parameters (float), while a CIFAR image requires 3 × 32 × 32 integer numbers (int). Hence, the budget for saving a backbone is equal to saving 463,504 floats ×4 bytes/float ÷(3 × 32 × 32) bytes/image ≈ 603 exemplars for CIFAR. Specifically, the memory cost of different methods in traditional benchmark protocol is shown in the left figure, while memory-aligned comparison advocates comparison in the right figure.
+
+<img src="resources/memory.png">
 
 <img src="resources/memory-aligned.png">
 
-- **Memory-agnostic comparison**: extends the memory-aligned comparison to the memory-agnostic performance measures, e.g., AUC-A and AUC-L. We set several memory budgets and align the cost of each method to them, drawing the performance-memory curve.
+- **Memory-agnostic comparison**: extends the memory-aligned comparison to the memory-agnostic performance measures, e.g., AUC-A and AUC-L. We set several memory budgets and align the cost of each method to them, drawing the performance-memory curve. The memory-agnostic comparison is not based on any assigned budget, which better measures the extendability of class-incremental learning models.
 
 <img src="resources/AUC.png">
 
