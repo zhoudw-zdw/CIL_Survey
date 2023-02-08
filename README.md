@@ -25,10 +25,16 @@ The code repository for "[Deep Class-Incremental Learning: A Survey](http://arxi
 Deep models, e.g., CNNs and Vision Transformers, have achieved impressive achievements in many vision tasks in the closed world. However, novel classes emerge from time to time in our ever-changing world, requiring a learning system to acquire new knowledge continually. For example, a robot needs to understand new instructions, and an opinion monitoring system should analyze emerging topics every day. Class-Incremental Learning (CIL) enables the learner to incorporate the knowledge of new classes incrementally and build a universal classifier among all seen classes. Correspondingly, when directly training the model with new class instances, a fatal problem occurs --- the model tends to catastrophically forget the characteristics of former ones, and its performance drastically degrades. There have been numerous efforts to tackle catastrophic forgetting in the machine learning community. 
 In this paper, we survey comprehensively recent advances in deep class-incremental learning and summarize these methods from three aspects, i.e., data-centric, model-centric, and algorithm-centric. We also provide a rigorous and unified evaluation of 16 methods in benchmark image classification tasks to find out the characteristics of different algorithms empirically. Furthermore, we notice that the current comparison protocol ignores the influence of memory budget in model storage, which may result in unfair comparison and biased results. Hence, we advocate fair comparison by aligning the memory budget in evaluation, as well as several memory-agnostic performance measures. 
 
-<img src="resources/taxonomy_fig.png">
+
+<div align="center">
+  <img src="resources/taxonomy_fig.png" width="90%">
+  
+  
+  <img src="resources/roadmap.png" width="90%">
+</div>
 
 
-<img src="resources/roadmap.png">
+
 
 
 ## Requirements
@@ -83,26 +89,34 @@ In the main paper, we conduct three types of empirical evaluations to find out t
 
 - **Benchmark comparison**: compares the performance of different methods with the same number of exemplars, e.g., 2000 for CIFAR100.
 
-<img src="resources/cifar.png">
+<div align="center">
 
-<img src="resources/imagenet100.png">
+<img src="resources/cifar.png" width="90%">
 
-<img src="resources/imagenet1000.png">
+<img src="resources/imagenet100.png" width="90%">
+
+  <img src="resources/imagenet1000.png" >
+</div>
 
 - **Memory-aligned comparison**: compares the performance of different methods with the same memory budget to DER. For those methods that consume less budget than DER, we align the cost by saving extra exemplars. For example, a ResNet32 model costs 463,504 parameters (float), while a CIFAR image requires 3 × 32 × 32 integer numbers (int). Hence, the budget for saving a backbone is equal to saving 463,504 floats ×4 bytes/float ÷(3 × 32 × 32) bytes/image ≈ 603 exemplars for CIFAR. Specifically, the memory cost of different methods in traditional benchmark protocol is shown in the left figure, while memory-aligned comparison advocates comparison in the right figure.
 
-<img src="resources/memory.png">
 
-<img src="resources/memory-aligned.png">
+<div align="center">
+
+<img src="resources/memory.png" width="70%">
+
+<img src="resources/memory-aligned.png" width="90%">
+
+</div>
+
 
 - **Memory-agnostic comparison**: extends the memory-aligned comparison to the memory-agnostic performance measures, e.g., AUC-A and AUC-L. We set several memory budgets and align the cost of each method to them, drawing the performance-memory curve. The memory-agnostic comparison is not based on any assigned budget, which better measures the extendability of class-incremental learning models.
 
 <img src="resources/AUC.png">
 
 
-
-    
-<table>
+<div align="center">
+  <table>
 <tr>
 	<th rowspan="2" colspan="1"> Method </th>
 <th scope="col" colspan="2">CIFAR100 Base0 Inc10</th>
@@ -185,6 +199,9 @@ In the main paper, we conduct three types of empirical evaluations to find out t
         <td><b>654.6</b></td>
     </tr>
 </table>
+</div>
+    
+
 
 
 
