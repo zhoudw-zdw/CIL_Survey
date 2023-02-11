@@ -10,7 +10,7 @@ The code repository for "[Deep Class-Incremental Learning: A Survey](http://arxi
  	}
 
 
-
+Feel free to [create new issues](https://github.com/zhoudw-zdw/CIL_Survey/issues/new) or [drop me an email](mailto:zhoudw@lamda.nju.edu.cn) if you find any interesting paper missing in our survey, and I shall include them in the next version.
 
 
 ## Updates
