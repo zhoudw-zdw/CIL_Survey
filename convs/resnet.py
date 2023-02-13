@@ -124,8 +124,6 @@ class Bottleneck(nn.Module):
 
 
 
-
-# 修改Resnet的实现。
 class ResNet(nn.Module):
 
     def __init__(self, block, layers, num_classes=1000, zero_init_residual=False,

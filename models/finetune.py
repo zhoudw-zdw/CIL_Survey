@@ -11,20 +11,17 @@ from utils.inc_net import IncrementalNet
 from models.base import BaseLearner
 from utils.toolkit import target2onehot, tensor2numpy
 
-# init_epoch = 200
-init_epoch = 1 #check
+init_epoch = 200
 init_lr = 0.1
 init_milestones = [60, 120, 170]
 init_lr_decay = 0.1
 init_weight_decay = 0.0005
 
-epochs = 1
-# epochs = 80
+epochs = 80
 lrate = 0.1
 milestones = [40, 70]
 lrate_decay = 0.1
-batch_size = 128 #check
-# batch_size = 512
+batch_size = 128 
 weight_decay = 2e-4
 num_workers = 8
 
