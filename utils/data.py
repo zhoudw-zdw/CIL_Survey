@@ -28,8 +28,8 @@ class iCIFAR10(iData):
     class_order = np.arange(10).tolist()
 
     def download_data(self):
-        train_dataset = datasets.cifar.CIFAR10("/data/zhoudw/cifar100-raw", train=True, download=True)
-        test_dataset = datasets.cifar.CIFAR10("/data/zhoudw/cifar100-raw", train=False, download=True)
+        train_dataset = datasets.cifar.CIFAR10("./data", train=True, download=True)
+        test_dataset = datasets.cifar.CIFAR10("./data", train=False, download=True)
         self.train_data, self.train_targets = train_dataset.data, np.array(
             train_dataset.targets
         )
@@ -56,8 +56,8 @@ class iCIFAR100(iData):
     class_order = np.arange(100).tolist()
 
     def download_data(self):
-        train_dataset = datasets.cifar.CIFAR100("/data/zhoudw/CIL-survey/cifar100", train=True, download=True)
-        test_dataset = datasets.cifar.CIFAR100("/data/zhoudw/CIL-survey/cifar100", train=False, download=True)
+        train_dataset = datasets.cifar.CIFAR100("./data", train=True, download=True)
+        test_dataset = datasets.cifar.CIFAR100("./data", train=False, download=True)
         self.train_data, self.train_targets = train_dataset.data, np.array(
             train_dataset.targets
         )
@@ -85,8 +85,9 @@ class iImageNet1000(iData):
     class_order = np.arange(1000).tolist()
 
     def download_data(self):
-        train_dir = "/data/zhoudw/CIL-survey/imagenet1000/train/"
-        test_dir = "/data/zhoudw/CIL-survey/imagenet1000/val/"
+        assert 0, "You should specify the folder of your dataset"
+        train_dir = "[DATA-PATH]/train/"
+        test_dir = "[DATA-PATH]/val/"
 
         train_dset = datasets.ImageFolder(train_dir)
         test_dset = datasets.ImageFolder(test_dir)
@@ -113,8 +114,9 @@ class iImageNet100(iData):
     class_order = np.arange(1000).tolist()
 
     def download_data(self):
-        train_dir = "/data/zhoudw/CIL-survey/imagenet100/seed_1993_subset_100_imagenet/train/"
-        test_dir = "/data/zhoudw/CIL-survey/imagenet100/seed_1993_subset_100_imagenet/val/"
+        assert 0, "You should specify the folder of your dataset"
+        train_dir = "[DATA-PATH]/train/"
+        test_dir = "[DATA-PATH]/val/"
 
         train_dset = datasets.ImageFolder(train_dir)
         test_dset = datasets.ImageFolder(test_dir)
