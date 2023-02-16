@@ -7,7 +7,7 @@ dataset2net = {
     'imagenet100': 'resnet18'
 }
 
-parser = argparse.ArgumentParser(description='Reproduce of multiple continual learning algorthms.')
+parser = argparse.ArgumentParser(description='A example of computing the number of exemplars.')
 
 parser.add_argument('--dataset', type=str, default="cifar100")
 parser.add_argument('--memory_size','-ms',type=int, default=2000)
