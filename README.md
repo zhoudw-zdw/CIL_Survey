@@ -3,8 +3,8 @@
 The code repository for "[Deep Class-Incremental Learning: A Survey](http://arxiv.org/abs/2302.03648)" in PyTorch. If you use any content of this repo for your work, please cite the following bib entry: 
 
     @article{zhou2023class,
-          author = {Zhou, Da-Wei and Wang, Qi-Wei and Qi, Zhi-Hong and Ye, Han-Jia and Zhan, De-Chuan and Liu, Ziwei},
-         title = {Deep Class-Incremental Learning: A Survey},
+        author = {Zhou, Da-Wei and Wang, Qi-Wei and Qi, Zhi-Hong and Ye, Han-Jia and Zhan, De-Chuan and Liu, Ziwei},
+        title = {Deep Class-Incremental Learning: A Survey},
         journal = {arXiv preprint arXiv:2302.03648},
         year = {2023}
      }
@@ -45,6 +45,8 @@ Here are the requirements for running the code:
 ### Dataset
 
 We use [CIFAR100](https://www.cs.toronto.edu/~kriz/cifar.html) and [ImageNet100/1000](https://www.image-net.org/) for our experiments. CIFAR100 will be automatically downloaded when running the code. 
+
+[Here](https://drive.google.com/drive/folders/1RBrPGrZzd1bHU5YG8PjdfwpHANZR_lhJ?usp=sharing) is the file list of ImageNet100.
 
 ### Pre-Trained Models
 
