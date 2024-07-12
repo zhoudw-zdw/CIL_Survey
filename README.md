@@ -1,17 +1,19 @@
-# Deep Class-Incremental Learning: A Survey
+# Class-Incremental Learning: A Survey
 
-The code repository for "[Deep Class-Incremental Learning: A Survey](http://arxiv.org/abs/2302.03648)" in PyTorch. If you use any content of this repo for your work, please cite the following bib entry: 
+The code repository for "[Class-Incremental Learning: A Survey](http://arxiv.org/abs/2302.03648)" in PyTorch. If you use any content of this repo for your work, please cite the following bib entry: 
 
-    @article{zhou2023class,
+    @article{zhou2024class,
         author = {Zhou, Da-Wei and Wang, Qi-Wei and Qi, Zhi-Hong and Ye, Han-Jia and Zhan, De-Chuan and Liu, Ziwei},
-        title = {Deep Class-Incremental Learning: A Survey},
-        journal = {arXiv preprint arXiv:2302.03648},
-        year = {2023}
+        title = {Class-Incremental Learning: A Survey},
+        journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+        year = {2024}
      }
 
 Feel free to [create new issues](https://github.com/zhoudw-zdw/CIL_Survey/issues/new) or [drop me an email](mailto:zhoudw@lamda.nju.edu.cn) if you find any interesting paper missing in our survey, and we shall include them in the next version.
 
 ## Updates
+
+[07/2024] Accepted to [TPAMI](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=34).
 
 [02/2023] [arXiv](https://arxiv.org/abs/2302.03648) paper has been released.
 
